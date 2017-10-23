@@ -1,6 +1,7 @@
 package examples.filter;
 
-import com.darksci.kafka.webview.plugin.filter.RecordFilter;
+
+import com.darksci.kafka.webview.ui.plugin.filter.RecordFilter;
 
 import java.util.Map;
 
