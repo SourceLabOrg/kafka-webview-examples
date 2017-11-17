@@ -1,6 +1,6 @@
 package examples.filter;
 
-import com.darksci.kafka.webview.ui.plugin.filter.RecordFilter;
+import org.sourcelab.kafka.webview.ui.plugin.filter.RecordFilter;
 
 import java.util.HashSet;
 import java.util.Map;

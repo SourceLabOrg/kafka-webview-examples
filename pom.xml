@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.darksci</groupId>
+    <groupId>org.sourcelab</groupId>
     <artifactId>kafka-webview-examples</artifactId>
     <version>1.0.0</version>
 
@@ -13,7 +13,7 @@
         <!-- Use kafka-webview-plugin dependency -->
         <!-- Scope is provided -->
         <dependency>
-            <groupId>com.darksci</groupId>
+            <groupId>org.sourcelab</groupId>
             <artifactId>kafka-webview-plugin</artifactId>
             <version>1.0.0</version>
             <scope>provided</scope>
