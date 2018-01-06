@@ -1,10 +1,41 @@
 # Kafka WebView Examples
 
-This Maven based example project aims to provide a template and easy to use examples for building plug-ins to the [Kafka WebView](#) project.
+This Maven based example project aims to provide a template and easy to use examples for building plug-ins to the [Kafka WebView](https://github.com/SourceLabOrg/kafka-webview) project.
 It is configured with all of the correct dependencies and has a few example implementations to give you a running start
-for developing your own Record Filters or Kafka Deserializers to be used with Kafka-WebView.
+for developing your own Record Filters or Kafka Deserializers to be used with Kafka WebView.
 
 **Kafka WebView** presents an easy-to-use web based interface for reading data out of kafka topics and providing basic filtering and searching capabilities.
+
+## Getting Started
+
+### Using this Project as a template
+
+The recommended way to get started is by forking or locally cloning this repository and using it as a template, simpling adding your own implementations to it.
+If you go this route you can skip the following section as it's already be done for you.
+
+### Setting up your own project
+
+If you'd prefer to setup your own project you'll need to include the following dependencies
+
+```xml
+    <!-- Use kafka-webview-plugin dependency -->
+    <!-- Scope is provided -->
+    <dependency>
+        <groupId>org.sourcelab</groupId>
+        <artifactId>kafka-webview-plugin</artifactId>
+        <version>1.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- Kafka Dependency for Deserializers -->
+    <!-- Scope is provided -->
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka-clients</artifactId>
+        <version>0.11.0.1</version>
+        <scope>provided</scope>
+    </dependency>
+```
 
 ## Writing Custom Filters
 
@@ -52,7 +83,7 @@ public interface RecordFilter {
      * @param value Deserialized Value object.
      * @return True means the record WILL be shown.  False means the record will NOT be shown.
      */
-    boolean filter(final String topic, final int partition, final long offset, final Object key, final Object value);
+    boolean includeRecord(final String topic, final int partition, final long offset, final Object key, final Object value);
 
     /**
      * Called on closing.
@@ -60,6 +91,14 @@ public interface RecordFilter {
     void close();
 }
 ```  
+
+### Example Implementations
+
+This project includes a few [example implementations](https://github.com/SourceLabOrg/kafka-webview-examples/tree/master/src/main/java/examples/filter) you can use for reference.  
+
+ - [StringSearchFilter.java](#) - Only passes records that contain a configured String value.
+ - [LowOffsetFilter.java](#) - Only passes records that have a stored offset greater than a configured value.
+ - [ModulusOffsetFilter.java](#) - Only passes specific records based on the offset and a configured modulus value.
 
 ## Writing Custom Deserializers
 

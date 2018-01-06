@@ -50,7 +50,7 @@ public class ModulusOffsetFilter implements RecordFilter {
      * @return True means the record WILL be shown.  False means the record will NOT be shown.
      */
     @Override
-    public boolean filter(final String topic, final int partition, final long offset, final Object key, final Object value) {
+    public boolean includeRecord(final String topic, final int partition, final long offset, final Object key, final Object value) {
         return offset % modulus == 0;
     }
 

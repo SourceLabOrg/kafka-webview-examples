@@ -5,6 +5,10 @@ import org.apache.kafka.common.serialization.Deserializer;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
+/**
+ * Dummy implementation that has little to no real world value.  Simply prefixes any stored
+ * string values with a prefixed string.
+ */
 public class ExampleDeserializer implements Deserializer<String> {
 
     @Override

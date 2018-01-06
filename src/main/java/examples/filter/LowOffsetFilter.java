@@ -1,6 +1,5 @@
 package examples.filter;
 
-
 import org.sourcelab.kafka.webview.ui.plugin.filter.RecordFilter;
 
 import java.util.HashSet;
@@ -39,7 +38,7 @@ public class LowOffsetFilter implements RecordFilter {
     }
 
     @Override
-    public boolean filter(final String topic, final int partition, final long offset, final Object key, final Object value) {
+    public boolean includeRecord(final String topic, final int partition, final long offset, final Object key, final Object value) {
         return offset > minimumOffset;
     }
 
