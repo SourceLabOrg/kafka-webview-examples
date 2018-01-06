@@ -96,9 +96,9 @@ public interface RecordFilter {
 
 This project includes a few [example implementations](https://github.com/SourceLabOrg/kafka-webview-examples/tree/master/src/main/java/examples/filter) you can use for reference.  
 
- - [StringSearchFilter.java](#) - Only passes records that contain a configured String value.
- - [LowOffsetFilter.java](#) - Only passes records that have a stored offset greater than a configured value.
- - [ModulusOffsetFilter.java](#) - Only passes specific records based on the offset and a configured modulus value.
+ - [StringSearchFilter.java](https://github.com/SourceLabOrg/kafka-webview-examples/blob/master/src/main/java/examples/filter/StringSearchFilter.java) - Only passes records that contain a configured String value.
+ - [LowOffsetFilter.java](https://github.com/SourceLabOrg/kafka-webview-examples/blob/master/src/main/java/examples/filter/LowOffsetFilter.java) - Only passes records that have a stored offset greater than a configured value.
+ - [ModulusOffsetFilter.java](https://github.com/SourceLabOrg/kafka-webview-examples/blob/master/src/main/java/examples/filter/ModulusOffsetFilter.java) - Only passes specific records based on the offset and a configured modulus value.
 
 ## Writing Custom Deserializers
 
