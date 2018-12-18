@@ -32,7 +32,7 @@ If you'd prefer to setup your own project you'll need to include the following d
     <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-clients</artifactId>
-        <version>0.11.0.1</version>
+        <version>2.0.0</version>
         <scope>provided</scope>
     </dependency>
 ```
@@ -107,6 +107,8 @@ is provided by Kafka, WebView requires nothing special or additional above imple
 have a Deserializer implementation for consuming from Kafka then you simply can just use it as is.
 
 If you don't already have an implementation, you can view the [interface here](https://github.com/apache/kafka/blob/0.11.0/clients/src/main/java/org/apache/kafka/common/serialization/Deserializer.java).
+
+**Important Note:** Kafka WebView will attempt to automatically convert objects returned from the Deserializer interface into a JSON representation for easy display in the browser (by way of [Jackson](https://github.com/FasterXML/jackson)).  This process is imperfect -- If you want your objects to be rendered within the browser in a specific way, it is **recommended** that your Deserializer implementation returns a pre-formatted String instead of a complex object.
 
 ## Packaging a Jar
 
