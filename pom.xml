@@ -8,17 +8,24 @@
     <artifactId>kafka-webview-examples</artifactId>
     <version>1.0.0</version>
 
+    <properties>
+        <avro-registry-version>4.1.0</avro-registry-version>
+        <confluent.maven.repo>http://packages.confluent.io/maven/</confluent.maven.repo>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <name>Confluent</name>
+            <url>${confluent.maven.repo}</url>
+        </repository>
+    </repositories>
+
+
     <!-- Define Dependencies -->
     <dependencies>
         <!-- Use kafka-webview-plugin dependency -->
         <!-- Scope is provided -->
-        <dependency>
-            <groupId>org.sourcelab</groupId>
-            <artifactId>kafka-webview-plugin</artifactId>
-            <version>1.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-
         <!-- Kafka Dependency for Deserializers -->
         <!-- Scope is provided -->
         <dependency>
@@ -26,6 +33,12 @@
             <artifactId>kafka-clients</artifactId>
             <version>2.0.0</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+            <version>${avro-registry-version}</version>
         </dependency>
     </dependencies>
 
